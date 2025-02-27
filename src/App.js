@@ -40,6 +40,7 @@ function App() {
       <TodoList>
         {defaultTodos.map(todo => (
           <TodoItem
+            key={todo.description}
             description={todo.description}
             completed={todo.completed}
             />
