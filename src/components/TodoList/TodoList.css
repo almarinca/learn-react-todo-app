@@ -1,0 +1,17 @@
+.todo-list {
+    margin: 24px 0;
+    padding: 0 50px;
+    height: 90%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+/* Hide scrollbar */
+/* https://stackoverflow.com/questions/16670931/hide-scroll-bar-but-while-still-being-able-to-scroll */
+.todo-list {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.todo-list::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}

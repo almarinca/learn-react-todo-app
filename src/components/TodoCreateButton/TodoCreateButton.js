@@ -1,6 +1,10 @@
+import './TodoCreateButton.css'
+
 function TodoCreateButton() {
     return (
-        <button>➕</button>
+        <button>
+            +
+        </button>
     )
 }
 

@@ -1,0 +1,18 @@
+input {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #5e81ac;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #252537;
+    color: #ffffff;
+    transition: background 0.3s, color 0.3s;
+}
+  
+input::placeholder {
+    color: #c0caf5;
+}
+
+input:focus-visible {
+    outline: none;
+}
