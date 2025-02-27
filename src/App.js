@@ -1,4 +1,8 @@
-import logo from './platzi.webp';
+import { TodoCounter } from './TodoCounter';
+import { TodoSearch } from './TodoSearch';
+import { TodoList } from './TodoList';
+import { TodoItem } from './TodoItem';
+import { TodoCreateButton } from './TodoCreateButton'
 import './App.css';
 
 function App() {
@@ -13,20 +17,10 @@ function App() {
         <TodoItem />
         <TodoItem />
       </TodoList>
-      
-      <CreateTodoButton />
+
+      <TodoCreateButton />
     </div>
   );
-}
-
-function TodoItem() {
-  return (
-    <li>
-      <span>✅</span>
-      <span>Finish To-do's app</span>
-      <span>❌</span>
-    </li>
-  )
 }
 
 export default App;
