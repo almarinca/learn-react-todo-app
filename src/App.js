@@ -1,8 +1,8 @@
-import { TodoCounter } from './TodoCounter';
-import { TodoSearch } from './TodoSearch';
-import { TodoList } from './TodoList';
-import { TodoItem } from './TodoItem';
-import { TodoCreateButton } from './TodoCreateButton'
+import { TodoCounter } from './components/TodoCounter';
+import { TodoSearch } from './components/TodoSearch';
+import { TodoList } from './components/TodoList';
+import { TodoItem } from './components/TodoItem';
+import { TodoCreateButton } from './components/TodoCreateButton'
 
 const defaultTodos = [
   {description: "Comprar pan y leche", completed: true},
