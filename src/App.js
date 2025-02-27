@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
 
-      <TodoCounter />
+      <TodoCounter completed={1} total={19} />
       <TodoSearch />
 
       <TodoList>

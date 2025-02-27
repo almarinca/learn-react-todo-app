@@ -1,6 +1,6 @@
 function TodoSearch() {
     return (
-        <input></input>
+        <input placeholder="Search Task"></input>
     )
 }
 
