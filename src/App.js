@@ -5,7 +5,6 @@ import { TodoSearch } from './TodoSearch';
 import { TodoList } from './TodoList';
 import { TodoItem } from './TodoItem';
 import { TodoCreateButton } from './TodoCreateButton'
-import './App.css';
 
 const defaultTodos = [
   {description: "Comprar pan y leche", completed: true},
