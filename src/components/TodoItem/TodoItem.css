@@ -18,3 +18,24 @@
     background: #252537;
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
 }
+
+.todo-description_completed {
+    text-decoration: line-through;
+    opacity: 50%;
+}
+
+.button {
+    cursor: pointer;
+}
+
+.todo-item .button:first-child {
+    margin-right: 24px;
+}
+
+.todo-item .button:last-child {
+    margin-left: 24px;
+}
+
+.button:hover {
+    transform: scale(1.2);
+}
