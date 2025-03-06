@@ -1,8 +1,17 @@
 import './TodoSearch.css'
 
-function TodoSearch() {
+function TodoSearch({
+    searchValue,
+    setSearchValue
+}) {
     return (
-        <input placeholder="Search Task"></input>
+        <input
+            placeholder="Search Task"
+            value={searchValue}
+            onChange={(event) => {
+                setSearchValue(event.target.value)
+            }}
+        />
     )
 }
 
