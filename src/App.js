@@ -29,19 +29,23 @@ const defaultTodos = [
 ]
 
 function App() {
+  const [todos, setTodos] = useState(defaultTodos);
   const [searchValue, setSearchValue] = useState('');
   console.log('User is searching todos about: ' + searchValue);
 
+  const completedTodos = todos.filter(todo => !!todo.completed).length
+  const totalTodos = todos.length
+
   return (
     <>
-      <TodoCounter completed={1} total={19} />
+      <TodoCounter completed={completedTodos} total={totalTodos} />
       <TodoSearch
         searchValue={searchValue}
         setSearchValue={setSearchValue}
       />
 
       <TodoList>
-        {defaultTodos.map(todo => (
+        {todos.map(todo => (
           <TodoItem
             key={todo.description}
             description={todo.description}
