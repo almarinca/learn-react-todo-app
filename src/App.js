@@ -36,6 +36,14 @@ function App() {
   const completedTodos = todos.filter(todo => !!todo.completed).length
   const totalTodos = todos.length
 
+  const searchedTodos = todos.filter(
+    todo => {
+      const todoText = todo.description.toLowerCase();
+      const searchText = searchValue.toLowerCase()
+      return todoText.includes(searchText)
+    }
+  )
+
   return (
     <>
       <TodoCounter completed={completedTodos} total={totalTodos} />
@@ -45,7 +53,7 @@ function App() {
       />
 
       <TodoList>
-        {todos.map(todo => (
+        {searchedTodos.map(todo => (
           <TodoItem
             key={todo.description}
             description={todo.description}
