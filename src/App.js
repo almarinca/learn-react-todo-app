@@ -53,8 +53,6 @@ function App() {
   }
 
   const deleteTodo = (description) => {
-    console.log("eliminando");
-    
     const newTodos = [...todos]
     const todoIndex = newTodos.findIndex(
       (todo) => todo.description === description

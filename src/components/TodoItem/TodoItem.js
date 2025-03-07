@@ -7,7 +7,7 @@ function TodoItem({description, completed, onComplete, onDelete}) {
                 className='button'
                 onClick={onComplete}
             >
-                {`${completed? "🔲" : "✅"}`}
+                {`${completed? "✅" : "🔲"}`}
             </span>
             <span
                 className={
