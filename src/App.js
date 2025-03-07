@@ -52,6 +52,17 @@ function App() {
     setTodos(newTodos)
   }
 
+  const deleteTodo = (description) => {
+    console.log("eliminando");
+    
+    const newTodos = [...todos]
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.description === description
+    )
+    newTodos.splice(todoIndex, 1)
+    setTodos(newTodos)
+  }
+
   return (
     <>
       <TodoCounter completed={completedTodos} total={totalTodos} />
@@ -66,7 +77,8 @@ function App() {
             key={todo.description}
             description={todo.description}
             completed={todo.completed}
-            onComplete={completeTodo}
+            onComplete={() => completeTodo(todo.description)}
+            onDelete={() => deleteTodo(todo.description)}
             />
         ))}
       </TodoList>
