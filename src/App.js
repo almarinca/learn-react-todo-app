@@ -31,7 +31,6 @@ const defaultTodos = [
 function App() {
   const [todos, setTodos] = useState(defaultTodos);
   const [searchValue, setSearchValue] = useState('');
-  console.log('User is searching todos about: ' + searchValue);
 
   const completedTodos = todos.filter(todo => !!todo.completed).length
   const totalTodos = todos.length
@@ -43,6 +42,15 @@ function App() {
       return todoText.includes(searchText)
     }
   )
+
+  const completeTodo = (description) => {
+    const newTodos = [...todos]
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.description === description
+    )
+    newTodos[todoIndex].completed = !newTodos[todoIndex].completed
+    setTodos(newTodos)
+  }
 
   return (
     <>
@@ -58,6 +66,7 @@ function App() {
             key={todo.description}
             description={todo.description}
             completed={todo.completed}
+            onComplete={completeTodo}
             />
         ))}
       </TodoList>
