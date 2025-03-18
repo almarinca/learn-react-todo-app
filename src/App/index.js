@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
-import { TodoCounter } from './components/TodoCounter/TodoCounter';
-import { TodoSearch } from './components/TodoSearch/TodoSearch';
-import { TodoList } from './components/TodoList/TodoList';
-import { TodoItem } from './components/TodoItem/TodoItem';
-import { TodoCreateButton } from './components/TodoCreateButton/TodoCreateButton'
-import { useLocalStorage } from './hooks/useLocalStorage';
+import { TodoCounter } from '../components/TodoCounter/TodoCounter';
+import { TodoSearch } from '../components/TodoSearch/TodoSearch';
+import { TodoList } from '../components/TodoList/TodoList';
+import { TodoItem } from '../components/TodoItem/TodoItem';
+import { TodoCreateButton } from '../components/TodoCreateButton/TodoCreateButton'
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
 // const defaultTodos = [
 //   {description: "Comprar pan y leche", completed: true},
