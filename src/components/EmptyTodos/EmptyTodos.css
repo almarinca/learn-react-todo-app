@@ -1,0 +1,19 @@
+.empty-todos-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 48px;
+}
+
+.empty-todos-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #60bceb;
+    color: white;
+    border-radius: 50%;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
