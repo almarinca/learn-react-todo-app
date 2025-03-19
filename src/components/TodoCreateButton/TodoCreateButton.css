@@ -1,4 +1,4 @@
-button {
+.todo-create-button {
   box-sizing: content-box;
   width: 40px;
   height: 40px;
@@ -16,7 +16,7 @@ button {
   z-index: 1100;
 }
 
-button:hover {
+.todo-create-button:hover {
   background: #82aaff;
   transform: rotate(360deg);
 }

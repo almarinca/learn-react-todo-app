@@ -8,7 +8,10 @@ function TodoCreateButton() {
     } = useContext(TodoContext)
 
     return (
-        <button onClick={() => (setOpenTodoModal(state => !state))}>
+        <button
+            className='todo-create-button'
+            onClick={() => (setOpenTodoModal(state => !state))}
+        >
             +
         </button>
     )
