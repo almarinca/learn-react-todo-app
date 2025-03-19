@@ -7,6 +7,7 @@ import { TodoCreateButton } from '../components/TodoCreateButton/TodoCreateButto
 import { TodosLoading } from '../components/TodosLoading/TodosLoading'
 import { TodosError } from '../components/TodosError/TodosError'
 import { EmptyTodos } from '../components/EmptyTodos/EmptyTodos'
+import { TodoModal } from '../components/TodoModal/TodoModal'
 import { TodoContext } from '../TodoContext';
 
 function AppUI() {
@@ -16,6 +17,7 @@ function AppUI() {
     searchedTodos,
     completeTodo,
     deleteTodo,
+    openTodoModal,
   } = useContext(TodoContext)
 
   return (
@@ -39,6 +41,13 @@ function AppUI() {
       </TodoList>
 
       <TodoCreateButton />
+
+      {openTodoModal && (
+        <TodoModal>
+          Here will appear the todo modal
+        </TodoModal>
+      )}
+
     </>
   );
 }
