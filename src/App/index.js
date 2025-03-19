@@ -4,7 +4,7 @@ import AppUI from './AppUI';
 function App() {
   return (
     <TodoContextProvider>
-      <AppUI/>;
+      <AppUI/>
     </TodoContextProvider>
   );
 }
