@@ -37,6 +37,7 @@ function TodoCreateForm() {
                 placeholder="New Task..."
                 value={newTodo}
                 onChange={onChange}
+                required
             ></textarea>
             <div
                 className="todo-form__buttons-container"
