@@ -9,22 +9,23 @@ import { TodosError } from '../components/TodosError/TodosError'
 import { EmptyTodos } from '../components/EmptyTodos/EmptyTodos'
 import { TodoModal } from '../components/TodoModal/TodoModal'
 import { TodoCreateForm } from '../components/TodoCreateForm/TodoCreateForm'
-import { TodoContext } from '../TodoContext';
+import { useMainController } from '../useMainController/useMainController';
 
 function AppUI() {
   const {
-    loading,
+    completedTodos,
     error,
+    loading,
+    openTodoModal,
     searchedTodos,
+    searchValue,
+    totalTodos,
+    addTodo,
     completeTodo,
     deleteTodo,
-    openTodoModal,
-    completedTodos,
-    totalTodos,
-    searchValue,
-    setSearchValue,
     setOpenTodoModal,
-  } = useContext(TodoContext)
+    setSearchValue,
+  } = useMainController()
 
   return (
     <>
@@ -50,7 +51,7 @@ function AppUI() {
 
       {openTodoModal && (
         <TodoModal>
-          <TodoCreateForm/>
+          <TodoCreateForm addTodo={addTodo} setOpenTodoModal={setOpenTodoModal}/>
         </TodoModal>
       )}
 
