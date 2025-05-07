@@ -1,10 +1,29 @@
 import './TodoList.css'
 
-function TodoList(props) {
+function TodoList({
+    totalTodos,
+    searchedTodos,
+    searchText,
+    loading,
+    error,
+    onLoading,
+    onError,
+    onEmpty,
+    onEmptySearch,
+    renderItem,
+    children,
+}) {    
+    const renderFunc = children || renderItem
     return (
-        <ul className='todo-list'>
-            {props.children}
-        </ul>
+        <>
+            {loading && onLoading()}
+            {error && onError()}
+            {!loading && !!totalTodos && searchedTodos.length === 0 && onEmptySearch(searchText)}
+            {!loading && !totalTodos && onEmpty()}
+            <ul className='todo-list'>
+                {searchedTodos.map(todo => renderFunc(todo))}
+            </ul>
+        </>
     )
 }
 
