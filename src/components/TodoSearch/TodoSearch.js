@@ -1,13 +1,6 @@
 import './TodoSearch.css'
-import { useContext } from 'react'
-import { TodoContext } from '../../TodoContext'
 
-function TodoSearch() {
-    const {
-        searchValue,
-        setSearchValue
-    } = useContext(TodoContext)
-
+function TodoSearch({ searchValue, setSearchValue }) {
     return (
         <input
             placeholder="Search Task"

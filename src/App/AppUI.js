@@ -19,12 +19,17 @@ function AppUI() {
     completeTodo,
     deleteTodo,
     openTodoModal,
+    completedTodos,
+    totalTodos,
+    searchValue,
+    setSearchValue,
+    setOpenTodoModal,
   } = useContext(TodoContext)
 
   return (
     <>
-      <TodoCounter/>
-      <TodoSearch/>
+      <TodoCounter completedTodos={completedTodos} totalTodos={totalTodos} />
+      <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue}/>
 
       <TodoList>
         {loading && <TodosLoading/>}
@@ -41,7 +46,7 @@ function AppUI() {
         ))}
       </TodoList>
 
-      <TodoCreateButton />
+      <TodoCreateButton onClick={() => (setOpenTodoModal(state => !state))} />
 
       {openTodoModal && (
         <TodoModal>
