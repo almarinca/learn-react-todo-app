@@ -5,9 +5,10 @@ export function useMainController() {
     
     const {
         item: todos,
-        saveItem: saveTodos,
         loading,
         error,
+        saveItem: saveTodos,
+        syncItem: syncTodos,
     } = useLocalStorage('todos_v1', []);
     
     const [searchValue, setSearchValue] = useState('');
@@ -64,5 +65,6 @@ export function useMainController() {
         deleteTodo,
         setOpenTodoModal,
         setSearchValue,
+        syncTodos,
     });
 }

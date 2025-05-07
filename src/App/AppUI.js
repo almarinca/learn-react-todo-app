@@ -9,6 +9,7 @@ import { EmptyTodos } from '../components/EmptyTodos/EmptyTodos'
 import { TodoModal } from '../components/TodoModal/TodoModal'
 import { TodoCreateForm } from '../components/TodoCreateForm/TodoCreateForm'
 import { useMainController } from '../useMainController/useMainController';
+import { ChangeAlertWithStorageListener } from '../components/ChangeAlert/ChangeAlert';
 
 function AppUI() {
   const {
@@ -24,6 +25,7 @@ function AppUI() {
     deleteTodo,
     setOpenTodoModal,
     setSearchValue,
+    syncTodos,
   } = useMainController()
 
   return (
@@ -60,6 +62,8 @@ function AppUI() {
           <TodoCreateForm addTodo={addTodo} setOpenTodoModal={setOpenTodoModal}/>
         </TodoModal>
       )}
+
+      <ChangeAlertWithStorageListener onUnsyncedStorage={syncTodos}/>
 
     </>
   );

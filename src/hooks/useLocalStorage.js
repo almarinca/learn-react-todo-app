@@ -5,6 +5,7 @@ function useLocalStorage(itemName, initialValue) {
   const [item, setItem] = React.useState(initialValue)
   const [loading, setLoading] = React.useState(true)
   const [error, setError] = React.useState(false)
+  const [isSynced, setIsSynced] = React.useState(true)
   
   React.useEffect(() => {
     // console.log('executing useLocalStorage effect')
@@ -21,11 +22,12 @@ function useLocalStorage(itemName, initialValue) {
         }
   
         setLoading(false)
+        setIsSynced(true)
       } catch(error) {
         setError(true)
       }
     }, 3000)
-  },)
+  }, [isSynced])
 
 
   const saveItem = (item) => {
@@ -33,11 +35,17 @@ function useLocalStorage(itemName, initialValue) {
     setItem(item)
   }
 
+  const syncItem = () => {
+    setLoading(true)
+    setIsSynced(false)
+  }
+
   return {
     item,
-    saveItem,
     loading,
-    error
+    error,
+    saveItem,
+    syncItem,
   }
 }
 

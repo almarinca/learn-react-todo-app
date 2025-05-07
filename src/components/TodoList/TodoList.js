@@ -20,9 +20,11 @@ function TodoList({
             {error && onError()}
             {!loading && !!totalTodos && searchedTodos.length === 0 && onEmptySearch(searchText)}
             {!loading && !totalTodos && onEmpty()}
-            <ul className='todo-list'>
-                {searchedTodos.map(todo => renderFunc(todo))}
-            </ul>
+            {!loading && !error && 
+                <ul className='todo-list'>
+                    {searchedTodos.map(todo => renderFunc(todo))}
+                </ul>
+            }
         </>
     )
 }
