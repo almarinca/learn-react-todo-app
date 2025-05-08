@@ -3,6 +3,12 @@ import React, { act, useReducer } from "react"
 function useLocalStorage(itemName, initialValue) {
 
   const [state, dispatch] = useReducer(reducer, initialState(initialValue))
+  const { 
+    onSuccess,
+    onError,
+    onSave,
+    onSynchronize,
+   } = createBoundActions(dispatch);
 
   const {
     item,
@@ -23,9 +29,9 @@ function useLocalStorage(itemName, initialValue) {
           parsedItem = JSON.parse(localStorage.getItem(itemName))
         }
 
-        dispatch({type: actionTypes.success, payload: parsedItem})
+        onSuccess(parsedItem)
       } catch(error) {
-        dispatch({type: actionTypes.error})
+        onError()
       }
     }, 3000)
   }, [isSynced])
@@ -33,11 +39,11 @@ function useLocalStorage(itemName, initialValue) {
 
   const saveItem = (item) => {
     localStorage.setItem(itemName, JSON.stringify(item))
-    dispatch({type: actionTypes.save, payload: item})
+    onSave(item)
   }
 
   const syncItem = () => {
-    dispatch({type: actionTypes.synchronize})
+    onSynchronize()
   }
 
   return {
@@ -54,6 +60,14 @@ const initialState = (initialValue) => ({
   loading: true,
   error: false,
   isSynced: true,
+})
+
+// Bound action creators
+const createBoundActions = dispatch => ({
+  onSuccess: (item) => dispatch({ type: actionTypes.success, payload: item }),
+  onError: () => dispatch({ type: actionTypes.error }),
+  onSave: (item) => dispatch({ type: actionTypes.save, payload: item }),
+  onSynchronize: () => dispatch({ type: actionTypes.synchronize }),
 })
 
 const actionTypes = {
