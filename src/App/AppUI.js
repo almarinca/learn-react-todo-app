@@ -12,6 +12,8 @@ import { useMainController } from '../useMainController/useMainController';
 import { ChangeAlert } from '../components/ChangeAlert/ChangeAlert';
 
 function AppUI() {
+  const { controllerState, controllerUpdaters } = useMainController()
+
   const {
     completedTodos,
     error,
@@ -20,13 +22,16 @@ function AppUI() {
     searchedTodos,
     searchValue,
     totalTodos,
+  } = controllerState
+
+  const {
     addTodo,
     completeTodo,
     deleteTodo,
     setOpenTodoModal,
     setSearchValue,
     syncTodos,
-  } = useMainController()
+  } = controllerUpdaters
 
   return (
     <>

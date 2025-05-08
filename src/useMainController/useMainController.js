@@ -53,18 +53,22 @@ export function useMainController() {
     }
 
     return ({
-        completedTodos,
-        error,
-        loading,
-        openTodoModal,
-        searchedTodos,
-        searchValue,
-        totalTodos,
-        addTodo,
-        completeTodo,
-        deleteTodo,
-        setOpenTodoModal,
-        setSearchValue,
-        syncTodos,
+        controllerState: {
+            completedTodos,
+            error,
+            loading,
+            openTodoModal,
+            searchedTodos,
+            searchValue,
+            totalTodos,
+        },
+        controllerUpdaters: {
+            addTodo,
+            completeTodo,
+            deleteTodo,
+            setOpenTodoModal,
+            setSearchValue,
+            syncTodos,
+        },
     });
 }
