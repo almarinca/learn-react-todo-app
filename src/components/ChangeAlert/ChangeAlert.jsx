@@ -1,22 +1,20 @@
 import './ChangeAlert.css'
-import { withStorageListener } from './withStorageListener'
+import { useStorageListener } from '../../hooks/useStorageListener'
 
-export function ChangeAlert({ shouldRender, onDismiss }) {
-    if (shouldRender) {
+export function ChangeAlert(onUnsyncedStorage) {
+    const { storageChanged, onSync } = useStorageListener(onUnsyncedStorage)
+
+    if (storageChanged) {
         return (
             <div className="ChangeAlert-bg">
                 <div className="ChangeAlert-container">
                     <p>Tasks were modified from another tab or window, you must sync to continue.</p>
                     <button
                         className="TodoForm-button TodoForm-button--add"
-                        onClick={onDismiss}
+                        onClick={onSync}
                     >Sync</button>
                 </div>
             </div>
         )
     }
 }
-
-const ChangeAlertWithStorageListener =  withStorageListener(ChangeAlert)
-
-export { ChangeAlertWithStorageListener }

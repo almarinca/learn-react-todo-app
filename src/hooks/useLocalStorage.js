@@ -8,7 +8,6 @@ function useLocalStorage(itemName, initialValue) {
   const [isSynced, setIsSynced] = React.useState(true)
   
   React.useEffect(() => {
-    // console.log('executing useLocalStorage effect')
     setTimeout(() => {
       try {
         const localStorageItems = localStorage.getItem(itemName)

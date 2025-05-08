@@ -9,7 +9,7 @@ import { EmptyTodos } from '../components/EmptyTodos/EmptyTodos'
 import { TodoModal } from '../components/TodoModal/TodoModal'
 import { TodoCreateForm } from '../components/TodoCreateForm/TodoCreateForm'
 import { useMainController } from '../useMainController/useMainController';
-import { ChangeAlertWithStorageListener } from '../components/ChangeAlert/ChangeAlert';
+import { ChangeAlert } from '../components/ChangeAlert/ChangeAlert';
 
 function AppUI() {
   const {
@@ -63,7 +63,7 @@ function AppUI() {
         </TodoModal>
       )}
 
-      <ChangeAlertWithStorageListener onUnsyncedStorage={syncTodos}/>
+      <ChangeAlert onUnsyncedStorage={syncTodos}/>
 
     </>
   );
